@@ -1,0 +1,49 @@
+{
+  "summary": {
+    "parsed_events": 8,
+    "ignored_lines": 0,
+    "allowlisted_events": 0,
+    "alerts": 2
+  },
+  "settings": {
+    "threshold": 5,
+    "window_seconds": 120,
+    "year": 2026
+  },
+  "alerts": [
+    {
+      "rule": "repeated_failures",
+      "severity": "medium",
+      "ip": "192.0.2.10",
+      "user": "admin",
+      "time": "2026-10-01T12:00:40+00:00",
+      "failure_count": 5,
+      "evidence_lines": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "trigger_line": 5,
+      "reason": "Limite de falhas por IP atingido dentro da janela."
+    },
+    {
+      "rule": "success_after_failures",
+      "severity": "high",
+      "ip": "192.0.2.10",
+      "user": "admin",
+      "time": "2026-10-01T12:00:50+00:00",
+      "failure_count": 5,
+      "evidence_lines": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "trigger_line": 6,
+      "reason": "Login aceito após falhas para o mesmo usuário e IP."
+    }
+  ]
+}
